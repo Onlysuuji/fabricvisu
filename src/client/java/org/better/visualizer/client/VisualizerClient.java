@@ -74,25 +74,29 @@ public final class VisualizerClient implements ClientModInitializer {
         ModelPredicateProviderRegistry.register(
                 item,
                 Identifier.of(Visualizer.MOD_ID, "left_badge_level"),
-                (stack, world, entity, seed) -> EnchantmentBadgeUtil.getLeftBadgeLevel(stack, world)
+                (stack, world, entity, seed) -> toPredicateValue(EnchantmentBadgeUtil.getLeftBadgeLevel(stack, world))
         );
 
         ModelPredicateProviderRegistry.register(
                 item,
                 Identifier.of(Visualizer.MOD_ID, "right_badge_level"),
-                (stack, world, entity, seed) -> EnchantmentBadgeUtil.getRightBadgeLevel(stack, world)
+                (stack, world, entity, seed) -> toPredicateValue(EnchantmentBadgeUtil.getRightBadgeLevel(stack, world))
         );
 
         ModelPredicateProviderRegistry.register(
                 item,
                 Identifier.of(Visualizer.MOD_ID, "top_left_badge_level"),
-                (stack, world, entity, seed) -> EnchantmentBadgeUtil.getTopLeftBadgeLevel(stack, world)
+                (stack, world, entity, seed) -> toPredicateValue(EnchantmentBadgeUtil.getTopLeftBadgeLevel(stack, world))
         );
 
         ModelPredicateProviderRegistry.register(
                 item,
                 Identifier.of(Visualizer.MOD_ID, "top_right_badge_level"),
-                (stack, world, entity, seed) -> EnchantmentBadgeUtil.getTopRightBadgeLevel(stack, world)
+                (stack, world, entity, seed) -> toPredicateValue(EnchantmentBadgeUtil.getTopRightBadgeLevel(stack, world))
         );
+    }
+
+    private static float toPredicateValue(int level) {
+        return level / 5.0F;
     }
 }
