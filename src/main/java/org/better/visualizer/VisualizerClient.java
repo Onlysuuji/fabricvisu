@@ -57,22 +57,22 @@ public final class VisualizerClient implements ClientModInitializer {
     private static void registerBadgeProperties(Item item) {
         ItemProperties.register(
                 item,
-                ResourceLocation.fromNamespaceAndPath(Visualizer.MOD_ID, "left_badge_level"),
+                ResourceLocation.fromNamespaceAndPath(Visualizer.MODID, "left_badge_level"),
                 (stack, level, entity, seed) -> EnchantmentBadgeUtil.getLeftBadgeLevel(stack, level)
         );
         ItemProperties.register(
                 item,
-                ResourceLocation.fromNamespaceAndPath(Visualizer.MOD_ID, "right_badge_level"),
+                ResourceLocation.fromNamespaceAndPath(Visualizer.MODID, "right_badge_level"),
                 (stack, level, entity, seed) -> EnchantmentBadgeUtil.getRightBadgeLevel(stack, level)
         );
         ItemProperties.register(
                 item,
-                ResourceLocation.fromNamespaceAndPath(Visualizer.MOD_ID, "top_left_badge_level"),
+                ResourceLocation.fromNamespaceAndPath(Visualizer.MODID, "top_left_badge_level"),
                 (stack, level, entity, seed) -> EnchantmentBadgeUtil.getTopLeftBadgeLevel(stack, level)
         );
         ItemProperties.register(
                 item,
-                ResourceLocation.fromNamespaceAndPath(Visualizer.MOD_ID, "top_right_badge_level"),
+                ResourceLocation.fromNamespaceAndPath(Visualizer.MODID, "top_right_badge_level"),
                 (stack, level, entity, seed) -> EnchantmentBadgeUtil.getTopRightBadgeLevel(stack, level)
         );
     }
