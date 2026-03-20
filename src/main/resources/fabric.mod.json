@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "visualizer",
+  "version": "${version}",
+  "name": "visualizer",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/visualizer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.example2.visualizer.client.VisualizerDataGenerator"
+    ],
+    "client": [
+      "org.example2.visualizer.client.VisualizerClient"
+    ],
+    "main": [
+      "org.example2.visualizer.Visualizer"
+    ]
+  },
+  "mixins": [
+    "visualizer.mixins.json",
+    {
+      "config": "visualizer.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
